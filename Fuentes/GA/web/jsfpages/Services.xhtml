@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='iso-8859-1' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!-- Services List -->
+        <div id="services" style="position: absolute; left: 86%;">
+            <h2>Tendencias<span></span></h2>
+            <div id="servicescontent">
+                <ul class="serviceslist" >
+<h:form>
+                        <ice:dataTable value="#{MenuController.tendencias}"
+                                       var="tt"
+                                       rows="#{MenuController.tendencias.size()}"
+                                       width="100%">
+                            <ice:column>
+                                <li>
+                                    <a href="#{tt.dcmUrl}" title="Perfil" target="_blank">
+                                        <ice:outputText value="#{tt.dcmTitulo}"/>
+                                </a>
+                                </li>
+                            </ice:column>
+                        </ice:dataTable>
+                    </h:form>
+                    
+                </ul>
+            </div>
+            
+            
+        </div>
+        
+    </h:body>
+</html>
+

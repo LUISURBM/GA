@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>SIGA Web Design</title>
+        <link href="stylesheets/common.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="container">
+            <div id="containertop"></div>
+            <!-- Header -->
+            <h1><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="UNINCCA Dise�os Web">SIGA Design</a></h1>
+            <hr />
+            <div id="navigation_wrapper">
+                <!-- Top Navigation -->
+                <ul id="navigation">
+                    <li><a href="/GA" title="Home">P&aacute;gina Principal</a></li>
+                    <li><a href="#" title="Portafolio">Contenido</a></li>
+                    <li><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="Contacto">Contacto</a></li>
+                    <li><a title="Usuario">No se ha registrado</a></li>
+                </ul>
+                <!-- Search Field -->
+                <fieldset id="search_wrapper">
+                    <form action="http://www.google.com/serach?"  target="_blank">
+                        <input type="text" value="Buscar" class="search" name="search" onFocus="javascript:this.value=''"/>
+                        <input type="submit" value="Search" class="hide"/>
+                    </form>
+                </fieldset>
+            </div>
+            <!-- Main Image -->
+            <div id="main_image" >
+                <form > 
+                    <p> <h:form>
+                            <center>
+                                <font size="4"> <strong> &iquest;Desea finalizar su sesi&oacute;n&#660;  </strong>
+                                    <br/><br/>
+                                    <ice:commandLink action="#{Autenticacion.cerrarSesion}" >
+                                        <img src="images/derecha.png" width="16" height="16" alt="Finalizar"/>
+                                    </ice:commandLink>
+                                    <td/><td/>
+                                    <a href="/GA">
+                                    <img src="images/eliminar.png" width="16" height="16" alt="Cancelar"/>
+                                    </a>
+                                </font>
+                            </center>
+                        </h:form>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer_wrapper">
+            <div id="footer">
+                <div class="logo"><a href="http://www.facebook.com" target="_blank"  title="Organic Web Design">Introduce Eco web (STUDIO7DESIGNS)</a><span></span></div>
+                <ul>
+                    <li><a href="/GA" title="Home">P&aacute;gina Principal</a></li>
+                    <li><a href="http://www.facebook.com/luiz.felipe.urbina/posts/10151766404981089"  target="_blank" title="Acerca de">Acerca de</a></li>
+                    <li><a href="./jsfpages/is3/Contenido.xhtml"  target="_blank" title="Contenido">Contenido</a></li>
+                    <li><a href="HTTP://www.facebook.com/luiz.felipe.urbina"  target="_blank"  title="Servicios">Servicios</a></li>
+                </ul>
+            </div>
+        </div>
+    </h:body>
+</html>
+

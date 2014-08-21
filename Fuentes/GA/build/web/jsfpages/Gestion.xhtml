@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>Menu Servicios</title>
+    </h:head>
+    <h:body>
+        <ice:form>
+            <!-- Services List -->
+            <!-- File menu -->
+            <div id="services" >
+                <h2>Servicios<span></span></h2>
+                <div id="servicescontent">
+
+                    <ul class="serviceslist">
+                        <li ><a accesskey="C" title="Accede a personalizar caracteriticas y elementos asociados de tu cuenta">
+
+                                <ice:menuBar id="menuBarCuenta"  
+                                             orientation="vertical" >                                    
+                                    <ice:menuItem id="cuenta" value=" Cuenta" icon="../images/user.png" >
+                                        <center>
+                                            <ice:menuItem icon="../images/vcard.png" value="Caracter&Iacute;sticas" id="caracteristicas"
+                                                          actionListener="#{MenuController.setPanelActivo('panelCuenta')}"/>
+                                            <ice:menuItem id="privacidad"
+                                                          value="Privacidad"
+                                                          actionListener="#{MenuController.setPanelActivo('panelCuentaPrivacidad')}"
+                                                          icon="../images/tools.png"/>
+                                            <ice:menuItem id="seguridad"
+                                                          actionListener="#{MenuController.setPanelActivo('panelCuentaSeguridad')}"
+                                                          value="Seguridad"
+                                                          icon="../images/shield.png"/>
+                                        </center>
+                                    </ice:menuItem>
+                                </ice:menuBar>
+
+                            </a></li>
+                        <li><a  accesskey="G"  title="Modificar detalles acerca de referencias u objetos de sistema">
+
+                                <ice:menuBar id="menuBarGestion" 
+                                             orientation="vertical" >
+
+                                    <ice:menuItem id="actualizar" value="GESTI&oacute;N"
+                                                  icon="../images/comment_edit.png">
+                                        <center>
+                                            <ice:menuItem id="archivo"
+                                                          value="Archivo"
+                                                          actionListener="#{MenuController.setPanelActivo('panelGestion')}"
+                                                          icon="../images/folder.gif"/>
+                                            <ice:menuItem id="referencias" 
+                                                          value="Referencias"
+                                                          actionListener="#{MenuController.setPanelActivo('panelGestionReferencias')}"
+                                                          icon="../images/link.png"/>
+                                        </center>
+                                    </ice:menuItem>
+                                </ice:menuBar>
+                            </a></li>
+                        <li ><a accesskey="C" title="Accede a menu inicio">
+                                <ice:menuBar id="menuBarInicio"  
+                                             orientation="vertical" >                                    
+                                    <ice:menuItem id="menuInicio" value=" Inicio" icon="../images/usr.png" 
+                                                  actionListener="#{MenuController.setPanelActivo('main')}"/>
+                                </ice:menuBar>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </ice:form>
+    </h:body>   
+</html>

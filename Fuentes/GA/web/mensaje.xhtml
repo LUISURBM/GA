@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      >
+    <!--
+    To change this template, choose Tools | Templates
+    and open the template in the editor.
+    -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Account SIGA Web Design</title>
+        <link href="stylesheets/common.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" href="images/favicon.ico" />
+        <script type="text/javascript" src="resources/css/jquery-1.6.2.min.js"></script>
+        <script src="//http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+        <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+   <script>
+          $(document).ready(function () {
+           
+            $("#savebtn").click(function () {
+              $("#dlg").hide('800', "swing", function () { $("#bkg").fadeOut("500"); });
+            });
+
+          });
+        </script>
+        <style type="text/css">
+
+             .savebtn {
+                width: 20px;
+                height: 20px;
+                padding: 5px;
+                margin: 2px;
+                float: right;
+                top: -100;
+                left: -680px;
+                position: relative;
+                background-image: url(images/derecha.png);
+                background-repeat: no-repeat;
+                background-position:center;
+                background-color: transparent;
+                display: block;
+            }
+
+        </style>
+
+    </h:head>
+    <h:body>
+
+        <div id="containerLogin">
+            <div id="containertop"></div>
+            <!-- Header -->
+            <h1><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="UNINCCA Diseï¿½os Web">SIGA Design</a></h1>
+            <hr />
+            <div id="navigation_wrapper">
+                <!-- Top Navigation -->
+                <ul id="navigation">
+                    <li><a href="${fbUser.link}" target="_blank" title="${fbUser.website}">${fbUser.name}</a></li>
+                    <li><a href="/GA/logout" target="_self" title="Fin">Salir</a></li>
+                    <li><a href="/GA/ayuda.jsf" title="Help">¿Que es esto?</a></li>
+                </ul>
+                <!-- Search Field -->
+                <fieldset id="search_wrapper">
+                    <form action="http://www.google.com/" target="_blank">
+                        <input type="text" onFocus="javascript:this.value=''" value="Buscar" class="search" name="search" size="31"/>
+                        <input type="submit" value="Search" class="hide" />
+                    </form>
+                </fieldset>
+            </div>
+            <!-- Main Image -->
+            <div id="main_image" style="font-size: 30px; color: #D3D3D3;" >
+                
+<h:form >
+                    <center>
+                        Felicidades!, cuenta enlazada ahora complemente el registro para el contacto...
+                        <br/>
+                        <br/>
+                        <br/>
+                        <ice:panelGrid columns="2" style="text-align: center;">
+                            <ice:outputLabel value="Cedula : " />
+                            <ice:inputText  value="${fbUser.cedula}" styleClass="auth"/>
+                            <ice:outputLabel value="Telefono : "/>
+                            <ice:inputText value="${fbUser.telefono}" styleClass="auth"/>
+                        </ice:panelGrid>
+                        <br/>
+                                
+                            <h:commandButton actionListener="#{MenuController.validarSesion}" styleClass="savebtn"  id="savebtn"   />
+                    </center>
+                </h:form>
+            </div>            
+        </div>
+
+        <!-- Footer -->
+        <div id="footer_wrapper">
+            <div id="footer">
+                <div class="logo"><a href="http://www.facesbook.com" target="_blank"  title="Organic Web Design">Introduce Eco web (STUDIO7DESIGNS)</a><span></span></div>
+                <ul>
+                    <li><a href="/GA" title="Home">P&aacute;gina Principal</a></li>
+                    <li><a href="http://www.facebook.com/luiz.felipe.urbina/posts/10151766404981089"  target="_blank" title="Acerca de">Acerca de</a></li>
+                    <li><a href="./jsfpages/is3/Contenido.xhtml"  target="_blank" title="Contenido">Contenido</a></li>
+                    <li><a href="HTTP://www.facebook.com/luiz.felipe.urbina"  target="_blank"  title="Servicios">Servicios</a></li>
+                </ul>
+            </div>
+        </div> 
+
+
+
+
+    </h:body>
+
+</html>

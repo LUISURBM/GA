@@ -1,0 +1,74 @@
+<?xml version='1.0' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Panel de Navegacion</title>
+        <link rel="stylesheet" href="../resources/css/nivo-slider.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../resources/themes/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../resources/themes/light/light.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../resources/themes/dark/dark.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../resources/themes/bar/bar.css" type="text/css" media="screen" />
+    </h:head>
+    <h:body >
+        <h:form>
+            <ice:panelStack selectedPanel="#{MenuController.panelActivo}">  
+                <ice:panelGrid id="main"> 
+
+                    <div id="main-image">
+                        <div class="slider-wrapper theme-default">
+                            <div id="slider" class="nivoSlider">
+                                <img src="../images/bgta1.jpg" data-thumb="images/bgta1.jpg" alt="" />
+                                <a href="http://dev7studios.com"><img src="images/bgta3.jpg" data-thumb="images/bgta3.jpg" alt="" title="This is an example of a caption" /></a>
+                                <img src="../images/bgta4.jpg" data-thumb="images/bgta4.jpg" alt="" data-transition="slideInLeft" />
+                                <img src="../images/bgta5.jpg" data-thumb="images/bgta5.jpg" alt="" title="#htmlcaption" />
+                                <img src="../images/bgta6.jpg" data-thumb="images/bgta6.jpg" width="900" height="413" alt="" />
+                            </div>
+                            <div id="htmlcaption" class="nivo-html-caption">
+                                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="../resources/jquery-1.9.0.min.js"></script>
+                    <script type="text/javascript" src="../resources/jquery.nivo.slider.js"></script>
+                    <script type="text/javascript">
+                        $(window).load(function() {
+                            $('#slider').nivoSlider();
+                        });
+                    </script>
+                </ice:panelGrid>
+
+                <ice:panelGrid id="panelCuenta">
+<!--                    <ui:include src="./gaUsr/Caracteristicas.xhtml" />-->
+                </ice:panelGrid>
+                <ice:panelGrid id="panelCuentaPrivacidad"> 
+<!--                    <ui:include src="./gaUsr/Privacidad.xhtml" />-->
+                </ice:panelGrid>
+                <ice:panelGrid id="panelCuentaSeguridad"> 
+<!--                    <ui:include src="./gaUsr/Seguridad.xhtml" />-->
+                </ice:panelGrid>
+                <ice:panelGrid id="panelGestion">
+                    <ui:include src="Archivo.xhtml" />
+                </ice:panelGrid>
+                <ice:panelGrid id="panelGestionReferencias">
+                </ice:panelGrid>
+            </ice:panelStack>
+
+            <ice:panelGrid visible="#{MenuController.isPanelCuentaActiva()}">
+                <ui:include src="Administrador.xhtml" />
+            </ice:panelGrid>
+        </h:form>
+        
+        <div class="blockbkg" id="bkg" style="visibility: hidden;">
+            <div class="body" id="dlg" style="visibility: hidden;">
+                <div class="closebtn" title="Close" id="closebtn"></div>
+
+                <ui:include src="welcome.xhtml" />
+
+            </div>
+        </div>
+    </h:body>
+</html>
+

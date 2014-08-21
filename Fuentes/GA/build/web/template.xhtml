@@ -1,0 +1,45 @@
+<?xml version='1.0'?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Records Keeping</ui:insert></title>
+        <link href="../stylesheets/common.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="resources/css/nivo-slider.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="resources/themes/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="resources/themes/light/light.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="resources/themes/dark/dark.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="resources/themes/bar/bar.css" type="text/css" media="screen" />
+    </h:head>
+
+    <h:body >
+          <div id="container">
+              
+        <div id="header">
+            <ui:insert name="header">
+                <ui:include src="/WEB-INF/templates/header.xhtml" />
+            </ui:insert>
+        </div>
+        <div id="content">
+             <!-- Main Image -->
+            <ui:insert name="content">
+                <div> 
+                    <ui:include src="jsfpages/PanelNavegacion.xhtml"/> 
+                </div>
+
+            </ui:insert>
+        </div>
+        <div id="footer">
+            <ui:insert name="footer">
+                <ui:include src="/WEB-INF/templates/footer.xhtml" />
+            </ui:insert>
+        </div>
+      
+        </div>
+
+    </h:body>
+</html>

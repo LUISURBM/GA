@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="error.html" x="1150" y="900" zoom="true"/>
+        <Node id="jsfpages/home.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="template.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="jsfpages/Administrador.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="jsfpages/Gestion.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="welcomeICEfaces.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="auth/loginError.html" x="1150" y="450" zoom="true"/>
+        <Node id="jsfpages/Servicios.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="facebookConnected.html" x="650" y="1050" zoom="true"/>
+        <Node id="index.html" x="2150" y="300" zoom="true"/>
+        <Node id="AccessRestricted.html" x="400" y="900" zoom="true"/>
+        <Node id="jsfpages/inicio.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="jsfpages/Services.xhtml" x="900" y="900" zoom="true"/>
+        <Node id="audio.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="mensaje.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="logout.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="jsfpages/index.html" x="1400" y="450" zoom="true"/>
+        <Node id="welcome.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="jsfpages/PanelNavegacion.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="facebookConnect.html" x="400" y="1200" zoom="true"/>
+        <Node id="portada.xhtml" x="150" y="1350" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

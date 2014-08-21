@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>SIGA Web Design</title>
+        <link href="./GA/stylesheets/common.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="./GA/resources/css/nivo-slider.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./GA/resources/themes/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./GA/resources/themes/light/light.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./GA/resources/themes/dark/dark.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./GA/resources/themes/bar/bar.css" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div id="container">
+            <div id="containertop"></div>
+            <!-- Header -->
+            <h1><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="UNINCCA Diseños Web">SIGA Design</a></h1>
+            <hr />
+            <div id="navigation_wrapper">
+                <!-- Top Navigation -->
+                <ul id="navigation">
+                    <li><a href="./inicio.jsf" title="Inicio">Portada</a></li>
+                    <li><a href="./is3/Contenido.html" title="Portofolio">Contenido</a></li>
+                    <li><a href="http://pixelhub.me/luizfelipeurbina" target="_blank" title="Contacto">Contacto</a></li>
+                    
+                </ul>
+                <!-- Search Field -->
+                <fieldset id="search_wrapper">
+                    <form action="http://www.google.com/" target="_blank">
+                        <input type="text" onFocus="javascript:this.value=''" value="Buscar" class="search" name="search" size="31"/>
+                        <input type="submit" value="Search" class="hide" />
+                    </form>
+                </fieldset>
+            </div>
+            <!-- Main Image -->
+
+            <div id="main-image">
+                <div class="slider-wrapper theme-default">
+                    <div id="slider" class="nivoSlider">
+                        <img src="./GA/images/bgta1.jpg" data-thumb="./GA/images/bgta1.jpg" alt="" />
+                        <a href="http://dev7studios.com"><img src="./GA/images/bgta3.jpg" data-thumb="images/bgta3.jpg" alt="" title="This is an example of a caption" /></a>
+                        <img src="./GA/images/bgta4.jpg" data-thumb="./GA/images/bgta4.jpg" alt="" data-transition="slideInLeft" />
+                        <img src="./GA/images/bgta5.jpg" data-thumb="./GA/images/bgta5.jpg" alt="" title="#htmlcaption" />
+                    </div>
+                    <div id="htmlcaption" class="nivo-html-caption">
+                        <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                    </div>
+                </div>
+                <script type="text/javascript" src="./GA/resources/jquery-1.9.0.min.js"></script>
+                    <script type="text/javascript" src="./GA/resources/jquery.nivo.slider.js"></script>
+                    <script type="text/javascript">
+                        $(window).load(function() {
+                            $('#slider').nivoSlider();
+                        });
+                    </script>
+            </div>
+            
+            <!-- Footer -->
+            <div id="footer_wrapper">
+                <div id="footer">
+                    <div class="logo"><a href="http://www.facesbook.com" title="Organic Web Design">Eco web design by STUDIO7DESIGNS</a><span></span></div>
+                    <ul>
+                        <li><a href="/GA" title="Home">Página Principal</a></li>
+                        <li><a href="HTTPS://www.facebook.com/luiz.felipe.urbina/posts/10151766404981089" title="Acerca de">Acerca de</a></li>
+                        <li><a href="./is3/Contenido.xhtml" title="Contenido">Contenido</a></li>
+                        <li><a href="HTTPS://www.facebook.com/luiz.felipe.urbina" title="Servicios">Servicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
