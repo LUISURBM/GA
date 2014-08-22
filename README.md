@@ -1,4 +1,4 @@
 RECORDS KEEPING
 ==
 
-Sistema informatico para la gestión de archivo
+Sistema informático para la gestión de archivo
