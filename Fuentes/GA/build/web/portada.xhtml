@@ -39,32 +39,38 @@
 //  }
         </script>
         <script>
-          $(document).ready(function () {
-           $("#containerLogin").click(function () {
-              $("#containerLogin").Style.addtop(100);
-              $("#containerLogin").left(100);
-              
-            });
-            $("#closebtn").click(function () {
-              $("#dlg").hide('800', "swing", function () { $("#bkg").fadeOut("500"); });
-            });
-            $("#savebtn").click(function () {
-              $("#dlg").hide('800', "swing", function () { $("#bkg").fadeOut("500"); });
-            });
-            $("#opn").click(function () {
-              if (document.getElementById('bkg').style.visibility == 'hidden') {
-                document.getElementById('bkg').style.visibility = '';
-                $("#bkg").hide();
-              }
-              if (document.getElementById('dlg').style.visibility == 'hidden') {
-                document.getElementById('dlg').style.visibility = '';
-                $("#dlg").hide();
-              }
-              $("#bkg").fadeIn(500, "linear", function () { $("#dlg").show(800, "swing"); });
-            });    
+            $(document).ready(function () {
+                $("#containerLogin").click(function () {
+                    $("#containerLogin").Style.addtop(100);
+                    $("#containerLogin").left(100);
 
-          });
-          
+                });
+                $("#closebtn").click(function () {
+                    $("#dlg").hide('800', "swing", function () {
+                        $("#bkg").fadeOut("500");
+                    });
+                });
+                $("#savebtn").click(function () {
+                    $("#dlg").hide('800', "swing", function () {
+                        $("#bkg").fadeOut("500");
+                    });
+                });
+                $("#opn").click(function () {
+                    if (document.getElementById('bkg').style.visibility == 'hidden') {
+                        document.getElementById('bkg').style.visibility = '';
+                        $("#bkg").hide();
+                    }
+                    if (document.getElementById('dlg').style.visibility == 'hidden') {
+                        document.getElementById('dlg').style.visibility = '';
+                        $("#dlg").hide();
+                    }
+                    $("#bkg").fadeIn(500, "linear", function () {
+                        $("#dlg").show(800, "swing");
+                    });
+                });
+
+            });
+
         </script>
 
     </h:head>
@@ -86,7 +92,7 @@
                 <!-- Search Field -->
                 <fieldset id="search_wrapper">
                     <form action="http://www.google.com/serach?"  target="_blank">
-                        <input type="text" value="Buscar" class="search" name="search" onFocus="javascript:this.value=''"/>
+                        <input type="text" value="Buscar" class="search" name="search" onFocus="javascript:this.value = ''"/>
                         <input type="submit" value="Search" class="hide"/>
                     </form>
                 </fieldset>
@@ -119,11 +125,32 @@
                         <span class="buttonText">Twitter</span>
                     </div>
                 </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
                 <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p>
 
             </div>
-
-
+            
+            <div id="containerbottom"></div>
 
             <!-- Footer -->
             <div id="footer_wrapper">

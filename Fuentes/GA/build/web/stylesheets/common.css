@@ -3,6 +3,7 @@
 @import url("reset-min.css"); /* ------- Reset all CSS Styles */
 
 /* =GENERAL - the general styles */
+
 body{
     font: 62.5%/2.2em Arial, Tahoma, Verdana,Helvetica, sans-serif;
     color: #4b4942;
@@ -17,17 +18,20 @@ strong{font-weight: bold;}
 /* =LAYOUT - the main layout styles */
 /* for the rounded top */
 #containertop{
+    border-radius: 0 15px 0 0;
     position: absolute;
-    width: 902px;
-    margin: -10px auto 0 auto;
-    height: 10px;
+    width: 90%;
+    /*margin: -1% 0 0 0;*/
+    margin-top: -13px;
+    height: 13px;
     font-size:0.1em;
     background:url(../images/container_top.png) left bottom no-repeat;
+    background-size: 100%;
 }
 * html #containertop{behavior: url(stylesheets/iepngfix.htc);} /* to correct transparent png in IE */
 /* container */
 #container{
-    width: 902px;
+    width: 90%;
     height: 540px;
     margin: 20px auto 0 auto;
     background: #171A0F url(../images/bg_container.png);
@@ -35,8 +39,8 @@ strong{font-weight: bold;}
 }
 
 #containerLogin{
-    width: 902px;
-    height: 340px;
+    width: 90%;
+    height: 100%;
     margin: 80px auto 0 auto;
     background: #171A0F url(../images/bg_container.png);
     padding-bottom:0;
@@ -93,7 +97,7 @@ h1 a,h1 a:hover{
 #navigation_wrapper{
     background: #363B28 url(../images/nav_bg.gif) 0 0 repeat-x;
     height: 37px;
-    width: 861px;
+    width: 90%;
     margin: 10px auto 20px auto;
 }
 #navigation{
@@ -310,7 +314,19 @@ h4 c,h4 c:hover{
 }
 
 /* =FOOTER */
+#containerbottom{
+    border-radius: 0 0 15px 0;
+    position: absolute;
+    width: 90%;
+    margin: -1px auto 0 auto;
+    height: 10px;
+    font-size:0.1em;
+    background:url(../images/container_bottom.png) left bottom no-repeat;
+}
+* html #containerbottom{behavior: url(stylesheets/iepngfix.htc);} /* to correct transparent png in IE */
+
 #footer_wrapper{
+    position: absolute;
     width: 871px;
     padding-left:31px;
     padding-bottom:25px;
@@ -321,7 +337,7 @@ h4 c,h4 c:hover{
 }
 #footer{
     position: relative;
-    width: 840px;
+    width: 90%;
     height: 67px;
     background: #313B24 url(../images/footer_bg.png) 0 bottom repeat-x;
 }
@@ -358,12 +374,3 @@ h4 c,h4 c:hover{
 boton{
     background-color: transparent; border-color: transparent;
 }
-
-
-
-
-
-
-
-
-
