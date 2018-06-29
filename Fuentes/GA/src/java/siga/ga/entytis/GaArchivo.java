@@ -24,7 +24,7 @@ import javax.validation.constraints.Size;
  * @author Otros
  */
 @Entity
-@Table(name = "GA_ARCHIVO", catalog = "", schema = "SYSTEM")
+@Table(name = "GA_ARCHIVO", catalog = "", schema = "APP")
 @NamedQueries({
     @NamedQuery(name = "GaArchivo.findAll", query = "SELECT g FROM GaArchivo g"),
     @NamedQuery(name = "GaArchivo.findByArchivoId", query = "SELECT g FROM GaArchivo g WHERE g.archivoId = :archivoId"),

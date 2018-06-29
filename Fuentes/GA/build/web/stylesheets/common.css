@@ -40,7 +40,7 @@ strong{font-weight: bold;}
 
 #containerLogin{
     width: 90%;
-    height: 100%;
+    height: auto;
     margin: 80px auto 0 auto;
     background: #171A0F url(../images/bg_container.png);
     padding-bottom:0;
@@ -100,16 +100,16 @@ h1 a,h1 a:hover{
     width: 90%;
     margin: 10px auto 20px auto;
 }
-#navigation{
+.nav-menu{
     float: left;
     padding-left:7px;
     height: 37px;
     background: url(../images/navigation_left.gif) left top no-repeat;
 }
-#navigation li{
+.nav-menu li{
     float: left;
 }
-#navigation li a{
+.nav-menu li a{
     padding: 7px 10px 0 10px;
     height: 30px;
     float: left;
@@ -119,14 +119,14 @@ h1 a,h1 a:hover{
     letter-spacing:-0.03em;
     color: #b1b3ab;
 }
-#navigation li a:hover{
+.nav-menu li a:hover{
     color: #82865b;
     background: #394030 url(../images/nav_hover_bg.gif) 0 0 repeat-x;
 }
 /* search */
 #search_wrapper{
     float: right;
-    height: 30px;
+    height: 37px;
     padding:7px 10px 0 0;
     background: url(../images/navigation_right.gif) right top no-repeat;
 }
@@ -152,9 +152,14 @@ h1 a,h1 a:hover{
 }
 /* =MAIN IMAGE */
 #main_image{
-    width:860px;
-    position: relative;
+    left: 20px;
+    width:90%;
     margin: 0 auto;
+}
+#main_container:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 /* frame: the small rounded image in the corner picture (top,right,bottom,left) */
 #frame_image_top,#frame_image_bottom{
@@ -327,7 +332,7 @@ h4 c,h4 c:hover{
 
 #footer_wrapper{
     position: absolute;
-    width: 871px;
+    width: 90%;
     padding-left:31px;
     padding-bottom:25px;
     margin: 0 auto;

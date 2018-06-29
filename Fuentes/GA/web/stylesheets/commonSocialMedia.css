@@ -17,9 +17,8 @@
 #fbBtn {
     display: inline-block;
     background: #3B5998;
-    color: white;
-    width: 175px;
-    border-radius: 5px;
+    width: 25%;
+    /*border-radius: 5px;*/
 }
 #fbBtn:hover {
     background: #5675CC;
@@ -29,15 +28,24 @@
     display: inline-block;
     background: #009DCE;
     color: white;
-    width: 175px;
-    border-radius: 5px;
+    width: 25%;
 }
 #twBtn:hover {
     background: #00ACEE;
     cursor: hand;
 }
+#ggBtn {
+    display: inline-block;
+    background: #cc3732;
+    color: white;
+    width: 25%;
+}
+#ggBtn:hover {
+    background: #e74b37;
+    cursor: hand;
+}
 
-span.icon {
+span.iconGg {
     background: url('/GA/images/btn_red.png') transparent 50% 50% no-repeat;
     display: inline-block;
     vertical-align: middle;
@@ -52,15 +60,14 @@ span.iconFb {
     height: 40px;
 }
 span.iconTw {
-    background: url('/GA/images/bird_black_48_0.png') transparent 50% 50% no-repeat;
+    background: url('/GA/images/twt.png') transparent 50% 50% no-repeat;
     display: inline-block;
     vertical-align: middle;
     width: 40px;
     height: 40px;
 }
 span.buttonText {
+    color: white;
     display: inline-block;
     vertical-align: middle;
-    padding-left: 40px;
-    padding-right: 40px;
 }
