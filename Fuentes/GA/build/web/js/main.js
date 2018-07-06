@@ -1,11 +1,13 @@
-$(document).ready(function() {
+
+
+$(document).ready(function () {
     "use strict";
 
     var window_width = $(window).width(),
-        window_height = window.innerHeight,
-        header_height = $(".default-header").height(),
-        header_height_static = $(".site-header.static").outerHeight(),
-        fitscreen = window_height - header_height;
+            window_height = window.innerHeight,
+            header_height = $(".default-header").height(),
+            header_height_static = $(".site-header.static").outerHeight(),
+            fitscreen = window_height - header_height;
 
     $(".fullscreen").css("height", window_height);
     $(".fitscreen").css("height", fitscreen);
@@ -14,10 +16,12 @@ $(document).ready(function() {
 
     if (document.getElementById("default-select")) {
         $('select').niceSelect();
-    };
+    }
+    ;
     if (document.getElementById("service-select")) {
         $('select').niceSelect();
-    };
+    }
+    ;
 
     //------- Lightbox  js --------//  
 //
@@ -54,21 +58,21 @@ $(document).ready(function() {
     });
 
 
-    if ( $(".site-content").hasClass("instagram") ) {
+    if ($(".site-content").hasClass("instagram")) {
         footerIntagram();
     }
 
 
-    function footerIntagram(){
+    function footerIntagram() {
         var feed = new Instafeed({
             target: "footer-ig-stream",
             get: "user",
-            limit : 6,
+            limit: 6,
             resolution: 'standard_resolution',
             userId: 2159114835,
             accessToken: "2159114835.9e667eb.7a37f9b944ea4023b94541c661cbf43d",
             template: '<a href="{{image}}" class="mfp-ig-popup" data-effect="mfp-zoom-in" title="{{title}}"><img src="{{image}}" alt="{{caption}}"></a>',
-            after: function() {
+            after: function () {
                 $(".mfp-ig-popup").magnificPopup({
                     type: "image",
                     removalDelay: 500, //delay removal by X to allow out-animation
@@ -79,7 +83,7 @@ $(document).ready(function() {
                         enabled: true // set to false to disable gallery
                     },
                     callbacks: {
-                        beforeOpen: function() {
+                        beforeOpen: function () {
                             // just a hack that adds mfp-anim class to markup 
                             this.st.image.markup = this.st.image.markup.replace("mfp-figure", "mfp-figure mfp-with-anim");
                             this.st.mainClass = this.st.el.attr("data-effect");
@@ -91,14 +95,12 @@ $(document).ready(function() {
         });
         feed.run();
     }
-    
+
 
     //------- Mobile Nav  js --------//  
 
     if ($('#nav-menu-container').length) {
-        
-        
-        
+
         var $mobile_nav = $('#nav-menu-container').clone().prop({
             id: 'mobile-nav'
         });
@@ -109,46 +111,47 @@ $(document).ready(function() {
         $mobile_nav.find('> fieldset').attr({
             'style': 'padding: 5% 25% 0 0; background: none;'
         });
-        
-        $('#nav-menu-container').append($mobile_nav);   
+
+        $('#nav-menu-container').append($mobile_nav);
         $('#nav-menu-container').prepend('<button type="button" id="mobile-nav-toggle" class="nav-menu"><i class="lnr lnr-menu"></i></button>');
-        $('body').append('<div id="mobile-body-overly"></div>');
+        $('#nav-menu-container').append('<div id="mobile-body-overly"></div>');
         $('#mobile-nav').find('.menu-has-children').prepend('<i class="lnr lnr-chevron-down"></i>');
 
-        $(document).on('click', '.menu-has-children i', function(e) {
-//            alert('click .menu-has-children i');
+        $(document).on('click', '.menu-has-children i', function (e) {
+            alert('click .menu-has-children i');
             $(this).next().toggleClass('menu-item-active');
             $(this).nextAll('ul').eq(0).slideToggle();
             $(this).toggleClass("lnr-chevron-up lnr-chevron-down");
-        });Z
+        });
 
-        $(document).on('click', '#mobile-nav-toggle', function(e) {
-//            alert('click #mobile-nav-toggle');
+        $(document).on('click', '#mobile-nav-toggle', function (e) {
+            alert('click #mobile-nav-toggle');
             $('body').toggleClass('mobile-nav-active');
             $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
             $('#mobile-body-overly').toggle();
         });
 
-        $(document).click(function(e) {
+        $(document).click(function (e) {
             var container = $("#mobile-nav, #mobile-nav-toggle");
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 if ($('body').hasClass('mobile-nav-active')) {
-//                    alert('#mobile-nav, #mobile-nav-toggle');
-                    $('body').removeClass('mobile-nav-active');
+                    alert('#mobile-nav, #mobile-nav-toggle');
                     $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
+                    $('body').removeClass('mobile-nav-active');
                     $('#mobile-body-overly').toggle();
                 }
             }
         });
-        
+
     } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
+        aler('#mobile-nav, #mobile-nav-toggle');
         $("#mobile-nav, #mobile-nav-toggle").hide();
-        $('#nav-menu-container').append('<ul class="nav-menu" id="navigation"/>');   
+        $('#nav-menu-container').append('<ul class="nav-menu" id="navigation"/>');
     }
 
     //------- Smooth Scroll  js --------//  
 
-    $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
+    $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             if (target.length) {
@@ -181,13 +184,13 @@ $(document).ready(function() {
         }
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         $('html, body').hide();
 
         if (window.location.hash) {
 
-            setTimeout(function() {
+            setTimeout(function () {
 
                 $('html, body').scrollTop(0).show();
 
@@ -209,7 +212,7 @@ $(document).ready(function() {
 
     //------- Header Scroll Class  js --------//  
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('#header').addClass('header-scrolled');
         } else {
@@ -248,7 +251,7 @@ $(document).ready(function() {
         var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 
         // Update the count down every 1 second
-        var x = setInterval(function() {
+        var x = setInterval(function () {
 
             // Get todays date and time
             var now = new Date().getTime();
@@ -264,8 +267,7 @@ $(document).ready(function() {
 
             // Display the result in the element with id="count"
             document.getElementById("count").innerHTML =
-
-                "<div class='col'><span>" + days + "</span><br> Days " + "</div>" + "<div class='col'><span>" + hours + "</span><br> Hours " + "</div>" + "<div class='col'><span>" + minutes + "</span><br> Minutes " + "</div>" + "<div class='col'><span>" + seconds + "</span><br> Seconds </div>";
+                    "<div class='col'><span>" + days + "</span><br> Days " + "</div>" + "<div class='col'><span>" + hours + "</span><br> Hours " + "</div>" + "<div class='col'><span>" + minutes + "</span><br> Minutes " + "</div>" + "<div class='col'><span>" + seconds + "</span><br> Seconds </div>";
 
             // If the count down is finished, write some text
             if (distance < 0) {
@@ -286,121 +288,121 @@ $(document).ready(function() {
                 zoom: 11,
                 center: new google.maps.LatLng(40.6700, -73.9400), // New York
                 styles: [{
-                    "featureType": "water",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#e9e9e9"
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#e9e9e9"
+                            }, {
+                                "lightness": 17
+                            }]
                     }, {
-                        "lightness": 17
+                        "featureType": "landscape",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f5f5f5"
+                            }, {
+                                "lightness": 20
+                            }]
+                    }, {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            }, {
+                                "lightness": 17
+                            }]
+                    }, {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            }, {
+                                "lightness": 29
+                            }, {
+                                "weight": 0.2
+                            }]
+                    }, {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            }, {
+                                "lightness": 18
+                            }]
+                    }, {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#ffffff"
+                            }, {
+                                "lightness": 16
+                            }]
+                    }, {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f5f5f5"
+                            }, {
+                                "lightness": 21
+                            }]
+                    }, {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#dedede"
+                            }, {
+                                "lightness": 21
+                            }]
+                    }, {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{
+                                "visibility": "on"
+                            }, {
+                                "color": "#ffffff"
+                            }, {
+                                "lightness": 16
+                            }]
+                    }, {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                                "saturation": 36
+                            }, {
+                                "color": "#333333"
+                            }, {
+                                "lightness": 40
+                            }]
+                    }, {
+                        "elementType": "labels.icon",
+                        "stylers": [{
+                                "visibility": "off"
+                            }]
+                    }, {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#f2f2f2"
+                            }, {
+                                "lightness": 19
+                            }]
+                    }, {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                                "color": "#fefefe"
+                            }, {
+                                "lightness": 20
+                            }]
+                    }, {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{
+                                "color": "#fefefe"
+                            }, {
+                                "lightness": 17
+                            }, {
+                                "weight": 1.2
+                            }]
                     }]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f5f5f5"
-                    }, {
-                        "lightness": 20
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.fill",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 17
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "geometry.stroke",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 29
-                    }, {
-                        "weight": 0.2
-                    }]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 18
-                    }]
-                }, {
-                    "featureType": "road.local",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 16
-                    }]
-                }, {
-                    "featureType": "poi",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f5f5f5"
-                    }, {
-                        "lightness": 21
-                    }]
-                }, {
-                    "featureType": "poi.park",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#dedede"
-                    }, {
-                        "lightness": 21
-                    }]
-                }, {
-                    "elementType": "labels.text.stroke",
-                    "stylers": [{
-                        "visibility": "on"
-                    }, {
-                        "color": "#ffffff"
-                    }, {
-                        "lightness": 16
-                    }]
-                }, {
-                    "elementType": "labels.text.fill",
-                    "stylers": [{
-                        "saturation": 36
-                    }, {
-                        "color": "#333333"
-                    }, {
-                        "lightness": 40
-                    }]
-                }, {
-                    "elementType": "labels.icon",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "color": "#f2f2f2"
-                    }, {
-                        "lightness": 19
-                    }]
-                }, {
-                    "featureType": "administrative",
-                    "elementType": "geometry.fill",
-                    "stylers": [{
-                        "color": "#fefefe"
-                    }, {
-                        "lightness": 20
-                    }]
-                }, {
-                    "featureType": "administrative",
-                    "elementType": "geometry.stroke",
-                    "stylers": [{
-                        "color": "#fefefe"
-                    }, {
-                        "lightness": 17
-                    }, {
-                        "weight": 1.2
-                    }]
-                }]
             };
             var mapElement = document.getElementById('map');
             var map = new google.maps.Map(mapElement, mapOptions);
@@ -417,5 +419,31 @@ $(document).ready(function() {
 //    $(document).ready(function() {
 //        $('#mc_embed_signup').find('form').ajaxChimp();
 //    });
+
+
+
+
+    $(document).on('click', '.tablinks', function (e) {
+
+//        alert('.tablinks '+e.target.textContent);
+//        console.log(e.target.textContent);
+        var container = $(".tablinks");
+
+
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(e.target.textContent).style.display = "block";
+        container.className += " active";
+
+
+    });
 
 });

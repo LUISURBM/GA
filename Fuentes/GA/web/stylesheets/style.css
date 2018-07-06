@@ -230,7 +230,7 @@ li.i {
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 }
-.content2 input[type="tel"] {
+.content2 input[type="tel"],.content1 input[type="tel"] {
 	padding:10px 10px 10px 10px;
 	width:76%;
 	border:1px solid white;

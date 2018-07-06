@@ -2002,13 +2002,12 @@ h6 {
 }
 
 .main-menu {
+        width:82%;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	padding: 12px 30px;
-	background: #fff;
 	-webkit-transition: all 0.3s ease 0s;
 	-moz-transition: all 0.3s ease 0s;
 	-o-transition: all 0.3s ease 0s;
@@ -2220,7 +2219,7 @@ h6 {
 }
 
 #mobile-nav {
-	position: fixed;
+	position: sticky;
 	top: 0;
 	padding-top: 18px;
 	bottom: 0;
@@ -2229,7 +2228,8 @@ h6 {
 	left: -260px;
 	width: 260px;
 	overflow-y: auto;
-	transition: 0.4s
+	transition: 0.4s;
+        visibility: hidden;
 }
 
 #mobile-nav ul {
@@ -2301,7 +2301,8 @@ body.mobile-nav-active {
 }
 
 body.mobile-nav-active #mobile-nav {
-	left: 0
+    visibility: visible;
+    position: sticky;
 }
 
 body.mobile-nav-active #mobile-nav-toggle {
