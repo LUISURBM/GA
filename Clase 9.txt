@@ -1,0 +1,21 @@
+Vista HTML JSON
+Modelo DB SQL
+Controladores Logica de negocio RUBY
+
+
+Embbeded ruby template  ert
+
+
+bundle install
+rails server
+rails generate controller books
+
+
+
+
+
+
+rails generate scaffold Author name:String phone:String
+
+rails db:migrate
+
