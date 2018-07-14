@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Managment</title>
+        <link href="../stylesheets/common.css" rel="stylesheet" type="text/css" />        
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+        
+    </h:head>
+    <h:body>
+ 
+    	
+        <div id="container">
+            <div id="containertop"></div>
+            <!-- Header -->
+            <h1><a href="http://www.facebook.com/luiz.felipe.urbina" title="UNINCCA Disenos Web">SIGA Design</a></h1>
+            <hr />
+            <div id="navigation_wrapper">
+                <!-- Top Navigation -->
+                <ul id="navigation">
+                    <li><a href="../welcome.jsf" target="_self" title="Usuario">${fbUser.name}</a></li>
+                    <li><a href="../logout" title="Identificarse" >Salir</a></li>
+                </ul>
+                <!-- Search Field -->
+                <fieldset id="search_wrapper">
+                    <form action="#">
+                        <input type="text" value="Buscar" onFocus="javascript:this.value=''" class="search" name="search" />
+                        <input type="submit" value="Search" class="hide" />
+                    </form>
+                </fieldset>
+            </div> 
+
+            <!-- The 1 Banner -->
+            <ui:include src="PanelNavegacion.xhtml" id="panelnav"/>
+
+        </div>
+        
+        <ui:include src="Servicios.xhtml" id="servicios"/>
+
+        <!-- Services List -->
+        <ui:include src="Services.xhtml" id="tendencias" />
+
+        <!-- Footer -->
+        <div id="footer_wrapper">
+            <div id="footer">
+                <div class="logo"><a href="http://www.facesbook.com" title="Organic Web Design">Introduce Eco web (STUDIO7DESIGNS)</a><span></span></div>
+                <ul>
+                    <li><a href="/GA" title="Home">Pagina Principal</a></li>
+                    <li><a href="HTTPS://www.facebook.com/luiz.felipe.urbina/posts/10151766404981089" title="Acerca de">Acerca de</a></li>
+                    <li><a href="./is3/Contenido.xhtml" title="Contenido">Contenido</a></li>
+                    <li><a href="HTTPS://www.facebook.com/luiz.felipe.urbina/" title="Servicios">Servicios</a></li>
+                </ul>
+            </div>
+        </div>
+    </h:body>
+</html>

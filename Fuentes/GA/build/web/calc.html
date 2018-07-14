@@ -1,125 +1,89 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Facebook Login Using Java Servlets</title> 
-        <style type="text/css">
-            .container {
-                font-family:tahoma;
-                width:100%;
-                background-color:white;
-                text-align:center;
-            }
-
-            b {
-                font-weight:normal;
-                color:blue;
-            }
-
-            #logout {
-                margin: 0px auto;
-                width:80px;
-                height:23px;
-                background-color: blue; 
-                color:white;
-            }
-        </style>
-
-        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-        <!--<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>-->
-        <!--<script src="//http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>-->
-        <!--<script src="//www.parsecdn.com/js/parse-1.2.16.min.js"></script>-->
-
+        <meta charset="utf-8">
+        <title>360&deg; Image Gallery</title>
+        <meta name="description" content="360&deg; Image Gallery - A-Frame">
+        <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+        <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+        <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+        <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+        <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+        <script src="components/set-image.js"></script>
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <script src="./js/aframe-material.js"></script>
         <script type="text/javascript">
-//  (function() {
-//    var po = document.createElement('script');
-//    po.type = 'text/javascript'; po.async = true;
-//    po.src = 'https://apis.google.com/js/client:plusone.js?onload=render';
-//    var s = document.getElementsByTagName('script')[0];
-//    s.parentNode.insertBefore(po, s);
-//  })();
-//
-//  function render() {
-//    gapi.signin.render('customBtn', {
-//      //'callback': 'signinCallback',
-//      'clientid': '658783611709-hum45sluuku2ok8tvvcnhcgk3dmklebs.apps.googleusercontent.com',
-//      'cookiepolicy': 'single_host_origin',
-//      
-//      'requestvisibleactions': 'http://schemas.google.com/AddActivity',
-//      'scope': 'https://www.googleapis.com/auth/plus.login'
-//    });
-//  }
-
-
-
-            AFRAME.registerComponent('log', {
-                schema: {type: 'string'},
-
-                init: function () {
-                    var stringToLog = this.data;
-                    console.log(stringToLog);
-                }
-            });
-
-            AFRAME.registerComponent('cursor-listener', {
-                init: function () {
-                    var lastIndex = -1;
-                    var COLORS = ['red', 'green', 'blue'];
-                    this.el.addEventListener('click', function (evt) {
-                        lastIndex = (lastIndex + 1) % COLORS.length;
-                        this.setAttribute('material', 'color', COLORS[lastIndex]);
-                        console.log('I was clicked at: ', evt.detail.intersection.point);
-                    });
-                }
-            });
+            AFRAME.ASSETS_PATH = "./assets";
         </script>
     </head>
     <body>
-        <div class="container">
-            <a-scene id="escenaCalc">
+    <a-scene>
+        <a-assets>
+            <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+            <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+            <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+            <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+            <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+            <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
 
+            <!-- Image link template to be reused. -->
+            <script id="link" type="text/html">
+                <a-entity class="link"
+                          geometry="primitive: plane; height: 1; width: 1"
+                          material="shader: flat; src: ${thumb}"
+                          event-set__1="_event: mousedown; scale: 1 1 1"
+                          event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+                          event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+                          event-set__4="_event: mouseleave; scale: 1 1 1"
+                          set-image="on: click; target: #image-360; src: ${src}"
+                          sound="on: click; src: #click-sound"></a-entity>
+                </script>
+            </a-assets>
 
-                <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" log="Hello, Box!" >
+            <!-- 360-degree image. -->
+            <a-sky id="image-360" radius="10" src="#city"></a-sky>
 
-                    <!-- These animations will start when the box is looked at. -->
-                    <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
-                    <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
-                    <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
+            <!-- Image links. -->
+            <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
+                <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
+                <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
+                <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+            </a-entity>
 
-                </a-box>
-                <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" class="clickable"></a-sphere>
-                <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-                <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-                <a-sky color="#ECECEC"></a-sky>
-                <a-entity>
-                    <a-entity cursor="fuse: true; fuseTimeout: 500"
-                              position="0 0 -1"
-                              geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                              material="color: black; shader: flat">
-                    </a-entity>
+            <!-- Camera + cursor. -->
+            <a-entity camera look-controls>
+                <a-cursor id="cursor"
+                          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                          animation__fusinzg="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                          event-set__1="_event: mouseenter; color: springgreen"
+                          event-set__2="_event: mouseleave; color: black"
+                          fuse="true"
+                          raycaster="objects: .link"></a-cursor>
+            </a-entity>
+            <a-entity>
+                <a-entity cursor="fuse: true; fuseTimeout: 500"
+                          position="0 0 -1"
+                          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                          material="color: black; shader: flat">
                 </a-entity>
+            </a-entity>
 
-                <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
+            <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
 
-                <a-camera>
-                    <a-cursor></a-cursor>
-                </a-camera>
-            </a-scene>
+            <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"
+                        event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+                        event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+                <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="true" position="0 -0.55 0.55"
+                        geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+            </a-cylinder>
+
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
 
 
-        </div>
 
-
-        <script type="text/javascript">
-
-            var boxEl = document.querySelector('a-box');
-
-            boxEl.addEventListener('mouseenter', function () {
-//                                    alert('boxEl mouseenter');
-                boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
-            });
-            boxEl.addEventListener("click", function () {
-//                                    alert("button was clicked");
-            });
-        </script>
+        </a-scene>
     </body>
 </html>

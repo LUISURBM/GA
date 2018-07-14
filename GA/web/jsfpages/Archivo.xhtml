@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>Menu Administrador</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ice:dataTable value="#{MenuController.usuarioActivo.documentoxpersonaCollection}"
+                           var="doc"
+                           rows="#{MenuController.rows}"
+                           width="100%" cellspacing="1" cellpadding="5">
+                <ice:column>
+                    <ice:rowSelector value="#{doc.selected}"
+                                     multiple="false"
+                                     enhancedMultiple="false"
+                                     preStyleOnSelection="true"/>
+                    <f:facet name="header">
+                        <ice:outputText value="ID"/>
+                    </f:facet>
+                    <ice:outputText value="#{doc.id}"/>
+                </ice:column>
+                
+                <ice:column>
+                    <f:facet name="header">
+                        <ice:outputText value="Documento"/>
+                    </f:facet>
+                    <ice:outputText value="#{doc.iddocumento.nombre}"/>
+                </ice:column>
+                <ice:column>
+                    <f:facet name="header">
+                        <ice:outputText value="Archivo"/>    
+                    </f:facet>
+                    <ice:outputText value="#{doc.iddocumento.idarchivo.direccion}"/>
+                </ice:column>
+                <ice:column>
+                    <f:facet name="header">
+                        <ice:outputText value="Ubicacion"/>
+                    </f:facet>
+                    <ice:outputText value="#{doc.iddocumento.idarchivo.ubicacion}"/>
+                </ice:column>
+                
+            </ice:dataTable>
+       </h:form>
+    </h:body>   
+</html>

@@ -112,11 +112,11 @@
     </context-param>
     <context-param>
         <param-name>facebookAppId</param-name>
-        <param-value>1432236540324653</param-value>
+        <param-value>1181857118543041</param-value>
     </context-param>  
     <context-param>
         <param-name>facebookAppSecret</param-name>
-        <param-value>1622c529f8d33772d80847ee892db1d3</param-value>
+        <param-value>c65d0e7e678f3848022a81e7e99a7bbf</param-value>
     </context-param>
     <servlet>
         <description/>

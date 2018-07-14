@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    </head>
+
+<body>
+  <a-scene>
+    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"
+                event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+                event-set__leave="_event: mouseleave; _target: #cylinderText; visible: true">
+      <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="true" position="0 -0.55 0.55"
+              geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+    </a-cylinder>
+      
+                  <a-entity laser-controls="hand: right"></a-entity>
+
+            <!-- BEGIN INPUTS/KEYBOARD -->
+            <a-keyboard></a-keyboard>
+            <a-input position="-0.7 1 -2.5" placeholder="Username" color="black" width="1"></a-input>
+            <a-input position="-0.7 0.8 -2.5" type="password" placeholder="Password" color="black" width="1"></a-input>
+            <!-- END INPUTS/KEYBOARD -->
+
+            <!-- BEGIN FORM -->
+            <a-rounded position="0.5 0.5 -2.5" width="4" height="3.1" radius="0.05" rotation="0 -20 0" scale="0.3 0.3 0.3">
+                <a-form>
+                    <a-switch position="0.2 2.7 0" enabled="true"></a-switch>
+                    <a-radio position="0.2 2.4 0" width="3" name="food" label="Burger with fries and pizza" value="pizza"></a-radio>
+                    <a-radio position="0.2 2.1 0" width="3" name="food" label="Veggies" checked="true" disabled="true"></a-radio>
+                    <a-radio position="0.2 1.8 0" width="3" name="food" label="Ice cream"></a-radio>
+                    <a-checkbox position="0.2 1.5 0" width="3" name="stuff" label="I am a checkbox" checked="true"></a-checkbox>
+                    <a-checkbox position="0.2 1.2 0" width="3" name="stuff" label="And I am another one" checked="true" disabled="true"></a-checkbox>
+                    <a-button position="0.2 0.8 0" name="stuff" value="Click me" type="raised"></a-button>
+                    <a-button position="0.2 0.35 0" width="3" name="stuff" value="You cannot click me" disabled="true"></a-button>
+                </a-form>
+            </a-rounded>
+            <!-- END FORM -->
+
+            <!-- BEGIN TOAST -->
+            <a-toast message="This is a toast" action="Got it"></a-toast>
+
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+  </a-scene>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      >
+    <!--
+    To change this template, choose Tools | Templates
+    and open the template in the editor.
+    -->
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+        <title>Sign in with on SIGA Web Design</title>
+        <link href="stylesheets/common.css" rel="stylesheet" type="text/css" />
+        <link href="stylesheets/commonSocialMedia.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="resources/css/jquery-1.6.2.min.js"></script>
+        <script src="//http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+        <script type="text/javascript">
+//  (function() {
+//    var po = document.createElement('script');
+//    po.type = 'text/javascript'; po.async = true;
+//    po.src = 'https://apis.google.com/js/client:plusone.js?onload=render';
+//    var s = document.getElementsByTagName('script')[0];
+//    s.parentNode.insertBefore(po, s);
+//  })();
+//
+//  function render() {
+//    gapi.signin.render('customBtn', {
+//      //'callback': 'signinCallback',
+//      'clientid': '658783611709-hum45sluuku2ok8tvvcnhcgk3dmklebs.apps.googleusercontent.com',
+//      'cookiepolicy': 'single_host_origin',
+//      'requestvisibleactions': 'http://schemas.google.com/AddActivity',
+//      'scope': 'https://www.googleapis.com/auth/plus.login'
+//    });
+//  }
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#containerLogin").click(function () {
+                    $("#containerLogin").Style.addtop(100);
+                    $("#containerLogin").left(100);
+
+                });
+                $("#closebtn").click(function () {
+                    $("#dlg").hide('800', "swing", function () {
+                        $("#bkg").fadeOut("500");
+                    });
+                });
+                $("#savebtn").click(function () {
+                    $("#dlg").hide('800', "swing", function () {
+                        $("#bkg").fadeOut("500");
+                    });
+                });
+                $("#opn").click(function () {
+                    if (document.getElementById('bkg').style.visibility == 'hidden') {
+                        document.getElementById('bkg').style.visibility = '';
+                        $("#bkg").hide();
+                    }
+                    if (document.getElementById('dlg').style.visibility == 'hidden') {
+                        document.getElementById('dlg').style.visibility = '';
+                        $("#dlg").hide();
+                    }
+                    $("#bkg").fadeIn(500, "linear", function () {
+                        $("#dlg").show(800, "swing");
+                    });
+                });
+
+            });
+
+        </script>
+
+    </h:head>
+    <h:body>
+
+        <div id="containerLogin">
+            <div id="containertop"></div>
+            <!-- Header -->
+            <h1><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="UNINCCA Dise�os Web">SIGA Design</a></h1>
+            <hr />
+            <div id="navigation_wrapper">
+                <!-- Top Navigation -->
+                <ul id="navigation">
+                    <li><a href="/GA/jsfpages/index.html" title="Home">Inicio</a></li>
+                    <li><a href="#" title="Portafolio">Contenido</a></li>
+                    <li><a href="http://www.facebook.com/luiz.felipe.urbina" target="_blank" title="Contacto">Contacto</a></li>
+                    <li><a href="${fbUser.link}" target="_blank" title="${fbUser.name}">${fbUser.name}</a></li>
+                </ul>
+                <!-- Search Field -->
+                <fieldset id="search_wrapper">
+                    <form action="http://www.google.com/serach?"  target="_blank">
+                        <input type="text" value="Buscar" class="search" name="search" onFocus="javascript:this.value = ''"/>
+                        <input type="submit" value="Search" class="hide"/>
+                    </form>
+                </fieldset>
+            </div>
+            <!-- Main Image -->
+            <div id="main_image" >
+
+
+                <a href="login">
+                    <div id="fbBtn" class="customGPlusSignIn">
+                        <span class="iconFb"></span>
+                        <span class="buttonText">Facebook</span>
+                    </div>
+                </a>
+                <p><a href="http://restfb.com/" target="_blank">Thanks to RestFB.</a></p>
+                <br/>
+                <a href="loginGAP">
+                    <div id="customBtn" class="customGPlusSignIn">
+                        <span class="icon"></span>
+                        <span class="buttonText">Google</span>
+                    </div>
+                </a>
+                <p><a href="https://cloud.google.com/products/app-engine/" target="_blank">Thanks to App Engine.</a></p>
+
+
+                <br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p><br/>
+                <a href="MyTwitterServlet?action=sign_in">
+                    <div id="twBtn" class="customGPlusSignIn">
+                        <span class="iconTw"></span>
+                        <span class="buttonText">Twitter</span>
+                    </div>
+                </a>
+                <p><a href="http://twitter4j.org" target="_blank">Thanks to Twitter4j.</a></p>
+
+            </div>
+
+
+
+            <!-- Footer -->
+            <div id="footer_wrapper">
+                <div id="footer">
+                    <div class="logo"><a href="http://www.facesbook.com" target="_blank"  title="Organic Web Design">Introduce Eco web (STUDIO7DESIGNS)</a><span></span></div>
+                    <ul>
+                        <li><a href="/GA" title="Home">Pagina Principal</a></li>
+                        <li><a href="http://www.facebook.com/luiz.felipe.urbina/posts/10151766404981089"  target="_blank" title="Acerca de">Acerca de</a></li>
+                        <li><a href="./jsfpages/is3/Contenido.xhtml"  target="_blank" title="Contenido">Contenido</a></li>
+                        <li><a href="HTTP://www.facebook.com/luiz.felipe.urbina"  target="_blank"  title="Servicios">Servicios</a></li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+
+        <div class="blockbkg" id="bkg" style="visibility: hidden;">
+            <div class="body" id="dlg" style="visibility: hidden;">
+                <div class="closebtn" title="Close" id="closebtn"></div>
+
+                <ui:include src="./jsfpages/welcome.xhtml" />
+
+            </div>
+        </div>
+    </h:body>
+
+</html>
